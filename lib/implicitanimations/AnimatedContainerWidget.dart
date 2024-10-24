@@ -123,6 +123,11 @@ class _AnimatedContainerWidgetState extends State<AnimatedContainerWidget>
 
     _definitionTitleController.dispose();
     _definitionDescriptionController.dispose();
+    _codeSnippetTitleController.dispose();
+    _codeSnippetController.dispose();
+    _animationTitleController.dispose();
+    _animationViewController.dispose();
+
   }
 
   @override
@@ -175,6 +180,7 @@ class _AnimatedContainerWidgetState extends State<AnimatedContainerWidget>
               SizedBox(
                 height: 10,
               ),
+
               SlideTransition(
                 position: _codeSnippetAnimation,
                 child: InteractiveViewer(

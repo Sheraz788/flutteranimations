@@ -180,7 +180,7 @@ class _ImplicitAnimationsState extends State<ImplicitAnimations>
         Navigator.push(context, MaterialPageRoute(builder: (context) => AnimatedAlignWidget()));
         break;
       case 3:
-        Navigator.push(context, MaterialPageRoute(builder: (context) => AnimatedPaddingWidget()));
+        Navigator.push(context, MaterialPageRoute(builder: (context) => MultiAnimatedContainerInAlign()));
         break;
       case 4:
         Navigator.push(context, MaterialPageRoute(builder: (context) => AnimatedPositionedWidget()));
