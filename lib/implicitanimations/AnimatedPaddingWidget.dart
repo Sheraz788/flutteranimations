@@ -27,76 +27,152 @@ class _AnimatedPaddingWidgetState extends State<AnimatedPaddingWidget> {
       appBar: AppBar(
         title: const Text("Animated Padding"),
       ),
-      body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
+      body: SingleChildScrollView(
 
-              AnimatedContainer(
-                duration: Duration(seconds: 1),
-                color: Colors.tealAccent,
-                child: AnimatedPadding(
-                  padding: EdgeInsets.all(paddingValue1),
-                  duration: Duration(seconds: 1),
-                  curve: Curves.easeInOut,
-                  child: Container(
-                    color: Colors.red,
-                    height: 100,
-                    width: 100,
-                    child: Center(
-                      child: Text(
-                        'Box 1',
-                        style: TextStyle(color: Colors.white, fontSize: 18),
-                      ),
-                    ),
-                  ),
+        child: Container(
+            padding: EdgeInsets.symmetric(vertical: 15, horizontal: 20),
+        
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+        
+                const Text(
+                  "Definition : ",
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 18,
+                      fontWeight: FontWeight.w500),
                 ),
-              ),
-
-              AnimatedContainer(
-                duration: Duration(seconds: 1),
-                color: Colors.teal,
-                child: AnimatedPadding(
-                  padding: EdgeInsets.all(paddingValue2),
-                  duration: Duration(seconds: 1),
-                  curve: Curves.easeInOut,
-                  child: Container(
-                    color: Colors.green,
-                    height: 100,
-                    width: 100,
-                    child: Center(
-                      child: Text(
-                        'Box 2',
-                        style: TextStyle(color: Colors.white, fontSize: 18),
-                      ),
-                    ),
-                  ),
+        
+                SizedBox(
+                  height: 10,
                 ),
-              ),
-
-              AnimatedContainer(
-                duration: Duration(seconds: 1),
-                color: Colors.orangeAccent,
-                child: AnimatedPadding(
-                  padding: EdgeInsets.all(paddingValue3),
-                  duration: Duration(seconds: 1),
-                  curve: Curves.easeInOut,
-                  child: Container(
-                    color: Colors.blue,
-                    height: 100,
-                    width: 100,
-                    child: Center(
-                      child: Text(
-                        'Box 3',
-                        style: TextStyle(color: Colors.white, fontSize: 18),
-                      ),
-                    ),
-                  ),
+        
+                const Text(
+                  "AnimatedPadding widget in Flutter is a widget that animates changes in its padding over a specified duration.",
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 16,
+                      fontWeight: FontWeight.w300),
                 ),
-              ),
+        
+                SizedBox(
+                  height: 10,
+                ),
+        
+                const Text(
+                  "Code Snippet : ",
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 18,
+                      fontWeight: FontWeight.w500),
+                ),
+        
+                SizedBox(
+                  height: 10,
+                ),
 
-            ],
-          )
+                InteractiveViewer(
+                  panEnabled: true,
+                  scaleEnabled: true,
+                  minScale: 1,
+                  maxScale: 5,
+                  child: const Image(
+                      image: AssetImage(
+                          "assets/codesnippets/animated_opacity.png")),
+                ),
+
+                SizedBox(
+                  height: 10,
+                ),
+
+                const Text(
+                  "Animation View : ",
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 18,
+                      fontWeight: FontWeight.w500),
+                ),
+
+                SizedBox(
+                  height: 10,
+                ),
+        
+                Container(
+                  width: MediaQuery.of(context).size.width,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+        
+                      AnimatedContainer(
+                        duration: Duration(seconds: 1),
+                        color: Colors.tealAccent,
+                        child: AnimatedPadding(
+                          padding: EdgeInsets.all(paddingValue1),
+                          duration: Duration(seconds: 1),
+                          curve: Curves.easeInOut,
+                          child: Container(
+                            color: Colors.red,
+                            height: 100,
+                            width: 100,
+                            child: Center(
+                              child: Text(
+                                'Box 1',
+                                style: TextStyle(color: Colors.white, fontSize: 18),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+        
+                      AnimatedContainer(
+                        duration: Duration(seconds: 1),
+                        color: Colors.teal,
+                        child: AnimatedPadding(
+                          padding: EdgeInsets.all(paddingValue2),
+                          duration: Duration(seconds: 1),
+                          curve: Curves.easeInOut,
+                          child: Container(
+                            color: Colors.green,
+                            height: 100,
+                            width: 100,
+                            child: Center(
+                              child: Text(
+                                'Box 2',
+                                style: TextStyle(color: Colors.white, fontSize: 18),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+        
+                      AnimatedContainer(
+                        duration: Duration(seconds: 1),
+                        color: Colors.orangeAccent,
+                        child: AnimatedPadding(
+                          padding: EdgeInsets.all(paddingValue3),
+                          duration: Duration(seconds: 1),
+                          curve: Curves.easeInOut,
+                          child: Container(
+                            color: Colors.blue,
+                            height: 100,
+                            width: 100,
+                            child: Center(
+                              child: Text(
+                                'Box 3',
+                                style: TextStyle(color: Colors.white, fontSize: 18),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+        
+                    ],
+                  ),
+                )
+              ],
+            )
+        ),
       ),
       floatingActionButton: FloatingActionButton.extended(onPressed: _togglePadding, label: Text('Click to Animate')),
     );

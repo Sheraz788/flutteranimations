@@ -138,12 +138,13 @@ class _AnimatedAlignWidgetState extends State<AnimatedAlignWidget>
                       child: Row(
                         mainAxisSize: MainAxisSize.min,
                         children: [
-
                           AnimatedContainer(
                             duration: Duration(seconds: 1),
                             width: _changeContainers ? 50 : 100,
                             height: _changeContainers ? 50 : 100,
-                            color: _changeContainers ? Colors.red : Colors.tealAccent,
+                            color: _changeContainers
+                                ? Colors.red
+                                : Colors.tealAccent,
                             child: Center(
                               child: GestureDetector(
                                 onTap: () {
@@ -151,20 +152,23 @@ class _AnimatedAlignWidgetState extends State<AnimatedAlignWidget>
                                 },
                                 child: Text(
                                   "Tap",
-                                  style:
-                                  TextStyle(color: Colors.white, fontSize: _changeContainers ? 10 : 20),
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: _changeContainers ? 10 : 20),
                                 ),
                               ),
                             ),
                           ),
-
-                          SizedBox(width: 10,),
-
+                          SizedBox(
+                            width: 10,
+                          ),
                           AnimatedContainer(
                             duration: Duration(seconds: 1),
                             width: _changeContainers ? 50 : 100,
                             height: _changeContainers ? 50 : 100,
-                            color: _changeContainers ? Colors.green : Colors.orange,
+                            color: _changeContainers
+                                ? Colors.green
+                                : Colors.orange,
                             child: Center(
                               child: GestureDetector(
                                 onTap: () {
@@ -172,20 +176,23 @@ class _AnimatedAlignWidgetState extends State<AnimatedAlignWidget>
                                 },
                                 child: Text(
                                   "Tap",
-                                  style:
-                                  TextStyle(color: Colors.white, fontSize: _changeContainers ? 10 : 20),
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: _changeContainers ? 10 : 20),
                                 ),
                               ),
                             ),
                           ),
-
-                          SizedBox(width: 10,),
-
+                          SizedBox(
+                            width: 10,
+                          ),
                           AnimatedContainer(
                             duration: Duration(seconds: 1),
                             width: _changeContainers ? 50 : 100,
                             height: _changeContainers ? 50 : 100,
-                            color: _changeContainers ? Colors.purple : Colors.yellow,
+                            color: _changeContainers
+                                ? Colors.purple
+                                : Colors.yellow,
                             child: Center(
                               child: GestureDetector(
                                 onTap: () {
@@ -193,13 +200,13 @@ class _AnimatedAlignWidgetState extends State<AnimatedAlignWidget>
                                 },
                                 child: Text(
                                   "Tap",
-                                  style:
-                                  TextStyle(color: Colors.white, fontSize: _changeContainers ? 10 : 20),
+                                  style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: _changeContainers ? 10 : 20),
                                 ),
                               ),
                             ),
                           )
-
                         ],
                       ),
                     ),
