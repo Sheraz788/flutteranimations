@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animations/implicitanimations/AnimatedContainerWidget.dart';
+import 'package:flutter_animations/widgets/app_toolbar.dart';
 
 import 'AnimatedAlignWidget.dart';
 import 'AnimatedCrossFadeWidget.dart';
@@ -91,9 +92,7 @@ class _ImplicitAnimationsState extends State<ImplicitAnimations>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Implicit Animations"),
-      ),
+      appBar: AppToolbar(title: "Implicit Animations"),
       body: SingleChildScrollView(
         child: Container(
           width: MediaQuery.of(context).size.width,

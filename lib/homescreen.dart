@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animations/theme/app_colors.dart';
+import 'package:flutter_animations/widgets/app_toolbar.dart';
+import 'package:flutter_animations/widgets/elevated_button.dart';
 
 import 'explicitanimations/ExplicitAnimations.dart';
 import 'implicitanimations/ImplicitAnimations.dart';
@@ -57,37 +60,48 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Flutter Animations"),
-        elevation: 5.0,
-      ),
+      appBar: AppToolbar(title: 'Flutter Animations'),
+
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             SlideTransition(
                 position: _leftButtonAnimation,
-                child: ElevatedButton(
-                    onPressed: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => ImplicitAnimations()));
-                    },
-                    child: Text("Implicit Animations"))),
+                child: AppElevatedButton(title: "Implicit Animations", onPress: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => ImplicitAnimations()));
+                })),
 
-            SizedBox(height: 20),
+            SizedBox(height: 25),
 
             SlideTransition(
                 position: _rightButtonAnimation,
-                child: ElevatedButton(
-                    onPressed: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => ExplicitAnimations()));
-                    },
-                    child: Text("Explicit Animations"))),
+                child: AppElevatedButton(title: "Explicit Animations", onPress: (){
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => ExplicitAnimations()));
+                })),
+
+            SizedBox(height: 25),
+
+            SlideTransition(
+                position: _leftButtonAnimation,
+                child: AppElevatedButton(title: "Hero Animations", onPress: (){
+
+                })),
+
+
+            SizedBox(height: 25),
+
+            SlideTransition(
+                position: _rightButtonAnimation,
+                child: AppElevatedButton(title: "Animation Packages", onPress: (){
+
+                }))
           ],
         ),
       ),
