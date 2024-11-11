@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animations/widgets/app_toolbar.dart';
 
 class AnimatedCrossFadeWidget extends StatefulWidget {
   const AnimatedCrossFadeWidget({super.key});
@@ -20,9 +21,7 @@ class _AnimatedCrossFadeWidgetState extends State<AnimatedCrossFadeWidget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: const Text("Animated CrossFade"),
-        ),
+        appBar: AppToolbar(title: "Animated CrossFade"),
         body: SingleChildScrollView(
           child: Container(
             width: MediaQuery.of(context).size.width,

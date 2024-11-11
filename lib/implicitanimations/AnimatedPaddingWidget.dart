@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animations/widgets/app_toolbar.dart';
 
 class AnimatedPaddingWidget extends StatefulWidget {
   const AnimatedPaddingWidget({super.key});
@@ -24,9 +25,7 @@ class _AnimatedPaddingWidgetState extends State<AnimatedPaddingWidget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Animated Padding"),
-      ),
+      appBar: AppToolbar(title: "Animated Padding"),
       body: SingleChildScrollView(
 
         child: Container(

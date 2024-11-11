@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animations/widgets/app_toolbar.dart';
 
 class AnimatedSizeWidget extends StatefulWidget {
   const AnimatedSizeWidget({super.key});
@@ -13,7 +14,8 @@ class _AnimatedSizeWidgetState extends State<AnimatedSizeWidget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('AnimatedSize Example')),
+      appBar: AppToolbar(title: 'AnimatedSize Example'),
+
       body: SingleChildScrollView(
 
         child: Container(

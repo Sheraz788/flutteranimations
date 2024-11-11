@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animations/widgets/app_toolbar.dart';
 
 class AnimatedOpacityWidget extends StatefulWidget {
   const AnimatedOpacityWidget({super.key});
@@ -45,9 +46,7 @@ class _AnimatedOpacityWidgetState extends State<AnimatedOpacityWidget>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text("Animated Opacity"),
-        ),
+        appBar: AppToolbar(title: "Animated Opacity"),
         body: SingleChildScrollView(
           child: Container(
             padding: EdgeInsets.symmetric(vertical: 15, horizontal: 20),

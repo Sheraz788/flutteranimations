@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animations/widgets/app_toolbar.dart';
 
 class AnimatedDefaultTextStyleWidget extends StatefulWidget {
   const AnimatedDefaultTextStyleWidget({super.key});
@@ -21,9 +22,7 @@ class _AnimatedDefaultTextStyleWidgetState extends State<AnimatedDefaultTextStyl
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('AnimatedDefaultTextStyle'),
-      ),
+      appBar: AppToolbar(title: 'AnimatedDefaultTextStyle'),
       body: SingleChildScrollView(
         child: Container(
           width: MediaQuery.of(context).size.width,

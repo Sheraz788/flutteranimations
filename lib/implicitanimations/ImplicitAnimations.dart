@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animations/implicitanimations/AnimatedContainerWidget.dart';
 import 'package:flutter_animations/widgets/app_toolbar.dart';
 
+import '../theme/app_colors.dart';
+import '../widgets/elevated_button.dart';
 import 'AnimatedAlignWidget.dart';
 import 'AnimatedCrossFadeWidget.dart';
 import 'AnimatedDefaultTextStyleWidget.dart';
@@ -93,71 +95,119 @@ class _ImplicitAnimationsState extends State<ImplicitAnimations>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppToolbar(title: "Implicit Animations"),
+
       body: SingleChildScrollView(
+
         child: Container(
           width: MediaQuery.of(context).size.width,
-          padding: EdgeInsets.symmetric(vertical: 15, horizontal: 20),
+          padding: EdgeInsets.symmetric(vertical: 15, horizontal: 10),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SlideTransition(
-                position: _titleAnimation,
-                child: const Text(
-                  "Basic Concept :",
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 18,
-                      fontWeight: FontWeight.w500),
+
+              Container(
+                width: MediaQuery.of(context).size.width,
+                padding: EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  color: tiles_theme_bg_color,
+                  borderRadius: BorderRadius.circular(10),
+                  boxShadow: [
+                    BoxShadow(
+                      color: app_theme_color.withOpacity(0.2),
+                      spreadRadius: 5,
+                      blurRadius: 3,
+                      offset: Offset(0, 2),
+                    ),
+                  ]
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    SlideTransition(
+                      position: _titleAnimation,
+                      child:  Text(
+                        "Basic Concept :",
+                        style: TextStyle(
+                            color: app_text_color,
+                            fontSize: 18,
+                            fontWeight: FontWeight.w600),
+                      ),
+                    ),
+                    SlideTransition(
+                      position: _descriptionAnimation,
+                      child:  Text(
+                        "            Implicit Animations are built-in animations that allow you to easily animate changes to widget properties, like size, position, color, or opacity, without needing to manually manage animation controllers or listeners.",
+                        style: TextStyle(
+                            color: app_text_color,
+                            fontSize: 16,
+                            fontWeight: FontWeight.w400),
+                        textAlign: TextAlign.start,
+                      ),
+                    ),
+                  ],
                 ),
               ),
-              SlideTransition(
-                position: _descriptionAnimation,
-                child: const Text(
-                  "            Implicit Animations are built-in animations that allow you to easily animate changes to widget properties, like size, position, color, or opacity, without needing to manually manage animation controllers or listeners.",
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 15,
-                      fontWeight: FontWeight.w400),
-                  textAlign: TextAlign.start,
-                ),
-              ),
+
+
               SizedBox(
                 height: 20,
               ),
 
-              SlideTransition(
-                position: _titleAnimation,
-                child: const Text(
-                  "Key Animations :",
-                  style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 18,
-                      fontWeight: FontWeight.w500),
-                ),
-              ),
+             Container(
+               width: MediaQuery.of(context).size.width,
+               padding: EdgeInsets.all(10),
+               decoration: BoxDecoration(
+                 color: tiles_theme_bg_color,
+                 borderRadius: BorderRadius.circular(10),
+                   boxShadow: [
+                     BoxShadow(
+                       color: app_theme_color.withOpacity(0.2),
+                       spreadRadius: 5,
+                       blurRadius: 3,
+                       offset: Offset(0, 2),
+                     ),
+                   ]
+               ),
 
-              SizedBox(height: 10,),
+               child: Column(
+                 crossAxisAlignment: CrossAxisAlignment.start,
+                 children: [
+                   SlideTransition(
+                     position: _titleAnimation,
+                     child: Text(
+                       "Key Animations :",
+                       style: TextStyle(
+                           color: app_text_color,
+                           fontSize: 18,
+                           fontWeight: FontWeight.w600),
+                     ),
+                   ),
 
-              Container(
-                width: MediaQuery.of(context).size.width,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: List.generate(
-                    implicitAnimations.length,
-                    (index) {
-                      return AnimatedContainer(
-                          duration: Duration(seconds: 1),
-                          curve: Curves.easeOut,
-                          margin: EdgeInsets.only(top: _visibleList[index] ? 10.0 : 100.0),
-                          child: ElevatedButton(
-                              onPressed: () {
-                                _handleButtonPress(index);
-                              },
-                              child: Text(implicitAnimations[index])));
-                    },
-                  ),
-                ),
-              )
+                   SizedBox(height: 10,),
+
+                   Container(
+                     width: MediaQuery.of(context).size.width,
+                     child: Column(
+                       crossAxisAlignment: CrossAxisAlignment.center,
+                       children: List.generate(
+                         implicitAnimations.length,
+                             (index) {
+                           return AnimatedContainer(
+                               duration: Duration(seconds: 1),
+                               curve: Curves.easeOut,
+                               margin: EdgeInsets.only(top: _visibleList[index] ? 10.0 : 100.0),
+                               child: AppElevatedButton(
+                                   onPress: () {
+                                     _handleButtonPress(index);
+                                   },
+                                   title: implicitAnimations[index]));
+                         },
+                       ),
+                     ),
+                   )
+                 ],
+               ),
+             )
             ],
           ),
         ),

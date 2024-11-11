@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animations/widgets/app_toolbar.dart';
 
 class AnimatedSwitcherWidget extends StatefulWidget {
   const AnimatedSwitcherWidget({super.key});
@@ -19,9 +20,7 @@ class _AnimatedSwitcherWidgetState extends State<AnimatedSwitcherWidget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Animated Switcher'),
-      ),
+      appBar: AppToolbar(title: 'Animated Switcher'),
       body: SingleChildScrollView(
         child: Container(
           width: MediaQuery.of(context).size.width,

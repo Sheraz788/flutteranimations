@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animations/widgets/app_toolbar.dart';
 
 class AnimatedAlignWidget extends StatefulWidget {
   const AnimatedAlignWidget({super.key});
@@ -37,9 +38,7 @@ class _AnimatedAlignWidgetState extends State<AnimatedAlignWidget>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text("Animated Align"),
-        ),
+        appBar: AppToolbar(title: "Animated Align"),
         body: SingleChildScrollView(
           child: Container(
             padding: EdgeInsets.symmetric(vertical: 15, horizontal: 20),

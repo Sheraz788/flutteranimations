@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animations/widgets/app_toolbar.dart';
 
 class AnimatedPositionedWidget extends StatefulWidget {
   const AnimatedPositionedWidget({super.key});
@@ -20,9 +21,7 @@ class _AnimatedPositionedWidgetState extends State<AnimatedPositionedWidget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Animated Positioned"),
-      ),
+      appBar: AppToolbar(title: "Animated Positioned"),
       body: SingleChildScrollView(
         child: Container(
           padding: EdgeInsets.symmetric(vertical: 15, horizontal: 20),

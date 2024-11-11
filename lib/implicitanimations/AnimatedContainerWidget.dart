@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animations/widgets/app_toolbar.dart';
 
 class AnimatedContainerWidget extends StatefulWidget {
   const AnimatedContainerWidget({super.key});
@@ -133,9 +134,7 @@ class _AnimatedContainerWidgetState extends State<AnimatedContainerWidget>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text("Animated Container"),
-        ),
+        appBar: AppToolbar(title: "Animated Container"),
         body: SingleChildScrollView(
           child: Container(
             padding: EdgeInsets.symmetric(vertical: 15, horizontal: 20),

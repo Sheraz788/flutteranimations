@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animations/widgets/app_toolbar.dart';
 
 class AnimatedPhysicalModelWidget extends StatefulWidget {
   const AnimatedPhysicalModelWidget({super.key});
@@ -15,9 +16,7 @@ class _AnimatedPhysicalModelWidgetState
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('AnimatedPhysicalModel'),
-      ),
+      appBar: AppToolbar(title: 'AnimatedPhysicalModel'),
       body: SingleChildScrollView(
         child: Container(
           width: MediaQuery.of(context).size.width,
