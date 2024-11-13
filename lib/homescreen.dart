@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animations/heroanimations/HeroAnimations.dart';
 import 'package:flutter_animations/theme/app_colors.dart';
 import 'package:flutter_animations/widgets/app_toolbar.dart';
 import 'package:flutter_animations/widgets/elevated_button.dart';
 
+import 'animationpackages/AnimationsPackages.dart';
 import 'explicitanimations/ExplicitAnimations.dart';
 import 'implicitanimations/ImplicitAnimations.dart';
 
@@ -92,6 +94,8 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
                 position: _leftButtonAnimation,
                 child: AppElevatedButton(title: "Hero Animations", onPress: (){
 
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => HeroAnimations()));
+
                 })),
 
 
@@ -100,6 +104,9 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
             SlideTransition(
                 position: _rightButtonAnimation,
                 child: AppElevatedButton(title: "Animation Packages", onPress: (){
+
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => AnimationPackages()));
+
 
                 }))
           ],
