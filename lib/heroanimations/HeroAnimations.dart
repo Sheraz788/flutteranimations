@@ -3,6 +3,8 @@ import 'package:flutter_animations/widgets/app_toolbar.dart';
 
 import '../theme/app_colors.dart';
 import '../widgets/elevated_button.dart';
+import 'BasicHeroAnimations.dart';
+import 'HeroAnimationsPractice.dart';
 
 class HeroAnimations extends StatefulWidget {
 
@@ -99,9 +101,55 @@ class _HeroAnimationsState extends State<HeroAnimations> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    Text(
+                      "Code Snippet : ",
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 18,
+                          fontWeight: FontWeight.w500),
+                    ),
+
+                    InteractiveViewer(
+                      panEnabled: true,
+                      scaleEnabled: true,
+                      minScale: 1,
+                      maxScale: 5,
+                      child: const Image(
+                          image: AssetImage(
+                              "assets/codesnippets/animated_opacity.png")),
+                    ),
+                  ],
+                ),
+
+              ),
+
+
+              SizedBox(
+                height: 20,
+              ),
+
+              Container(
+                width: MediaQuery.of(context).size.width,
+                padding: EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                    color: tiles_theme_bg_color,
+                    borderRadius: BorderRadius.circular(10),
+                    boxShadow: [
+                      BoxShadow(
+                        color: app_theme_color.withOpacity(0.2),
+                        spreadRadius: 5,
+                        blurRadius: 3,
+                        offset: Offset(0, 2),
+                      ),
+                    ]
+                ),
+
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
 
                     Text(
-                      "Key Animations :",
+                      "Animation View :",
                       style: TextStyle(
                           color: app_text_color,
                           fontSize: 18,
@@ -117,28 +165,31 @@ class _HeroAnimationsState extends State<HeroAnimations> {
                         children: List.generate(
                           heroAnimations.length,
                               (index) {
-                            return AnimatedContainer(
+                            return Hero(tag: "hero-tag-$index", child: AnimatedContainer(
                                 duration: Duration(seconds: 1),
                                 curve: Curves.easeOut,
                                 //margin: EdgeInsets.only(top: _visibleList[index] ? 10.0 : 100.0),
                                 child: AppElevatedButton(
                                     onPress: () {
 
-
+                                      Navigator.push(context, MaterialPageRoute(builder: (context) => BasicHeroAnimation()));
 
                                     },
-                                    title: heroAnimations[index]));
+                                    title: heroAnimations[index])
+                            ));
                           },
                         ),
                       ),
-                    )
+                    ),
+
+                    SizedBox(
+                      height: 15,
+                    ),
 
 
                   ],
                 ),
               )
-
-
 
 
 
